@@ -8,4 +8,4 @@ services:
       - key: MONGODB_URI
         value: MONGODB_URI,
       - key: PORT
-        value: MONGODB_URI,
+        value: 10000

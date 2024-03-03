@@ -4,6 +4,9 @@ Run npm install and npm dev from root in the terminal
 
 Test the endpoints in the routes.rest file with Rest Client or another similar tool.
 
+GitHub - https://github.com/joelcannon/cse341-ww-student-code/tree/wk1.2-jc
+Render - https://cse341-contact-list.onrender.com
+
 ### Video
 
 [Video Example for Students without showing all code](https://www.youtube.com/watch?v=MhObHmqk58U)

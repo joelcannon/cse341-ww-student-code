@@ -1,11 +1,11 @@
 {
   "name": "REST-practice",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "learn how to make a MongoDB REST API",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",

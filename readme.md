@@ -1,6 +1,6 @@
 # How to run it
 
-Run npm install and npm start from the backend folder in the terminal
+Run npm install and npm dev from root in the terminal
 
 Test the endpoints in the routes.rest file with Rest Client or another similar tool.
 

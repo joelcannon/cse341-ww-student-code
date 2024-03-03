@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rest-practice
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        value: MONGODB_URI,
+      - key: PORT
+        value: MONGODB_URI,

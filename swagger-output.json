@@ -53,49 +53,6 @@
           }
         }
       }
-    },
-    "/": {
-      "get": {
-        "tags": [
-          "contacts"
-        ],
-        "description": "get all contacts",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/{id}": {
-      "get": {
-        "tags": [
-          "contacts"
-        ],
-        "description": "get a single contact by id",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
-      }
     }
   }
 }

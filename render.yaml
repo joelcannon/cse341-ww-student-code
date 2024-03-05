@@ -11,3 +11,5 @@ services:
         value: 10000
       - key: CORS_ORIGIN
         value: https://cse341-contact-list.onrender.com
+      - key: HOST
+        value: https://cse341-contact-list.onrender.com

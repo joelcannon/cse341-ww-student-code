@@ -4,8 +4,17 @@ const { check, validationResult } = require('express-validator')
 const contactsController = require('../controllers/contacts')
 
 // Define the route handlers
-router.get('/', contactsController.getAll)
+router.get('/', [
+  // #swagger.description = 'get all contacts'
+  // #swagger.tags = ['contacts']
+
+  contactsController.getAll,
+])
+
 router.get('/:id', [
+  // #swagger.description = 'get a single contact by id'
+  // #swagger.tags = ['contacts']
+
   // Validate the ID parameter
   check('id').isMongoId().withMessage('Invalid ID format'),
   // Handle validation errors

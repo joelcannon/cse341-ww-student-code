@@ -12,6 +12,9 @@ const mongodb = require('./db/connect')
 const routes = require('./routes')
 const config = require('./config') // Import the config file
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger-output.json')
+
 const app = express()
 
 app
@@ -21,6 +24,7 @@ app
     next()
   })
   .use('/', routes)
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 /**
  * Initializes the MongoDB database connection.

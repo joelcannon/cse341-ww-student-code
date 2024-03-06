@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: process.env.HOST || 'localhost:3000',
+  host: process.env.HOST || 'localhost:8080',
 }
 
 const outputFile = './swagger-output.json'
@@ -15,3 +15,4 @@ const routes = ['./routes/index.js']
 root file where the route starts, such as index.js, app.js, routes.js, etc ... */
 
 swaggerAutogen(outputFile, routes, doc)
+console.log('Running swagger script...')

@@ -45,4 +45,25 @@ const getSingle = async (req, res, next) => {
   }
 }
 
-module.exports = { getAll, getSingle }
+/**
+ * Creates a new contact in the database.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} next - The next middleware function.
+ * @returns {Promise<void>} - A promise that resolves when the operation is complete.
+ */
+const create = async (req, res, next) => {
+  try {
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .insertOne(req.body)
+    res.setHeader('Content-Type', 'application/json')
+    res.status(201).json({ id: result.insertedId })
+  } catch (err) {
+    next(err)
+  }
+}
+
+module.exports = { getAll, getSingle, create }

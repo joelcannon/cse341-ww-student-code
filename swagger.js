@@ -2,8 +2,9 @@ const swaggerAutogen = require('swagger-autogen')()
 
 const doc = {
   info: {
-    title: 'My API',
-    description: 'Description',
+    title: 'REST-client API',
+    description:
+      'BYUI CSE341 Week 2: API Documentation for REST-client project',
   },
   host: process.env.HOST || 'localhost:8080',
 }

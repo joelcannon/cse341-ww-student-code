@@ -2,9 +2,9 @@
   "name": "temple-api",
   "version": "1.0.0",
   "description": "LDS Temple API for BYU-Idaho WDD230 student projects",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "swagger": "node ./swagger.js"
   },
@@ -12,12 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/nathanbirch/temple-api.git"
   },
-  "author": "Nathan Birch",
+  "author": "Joel Cannon",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nathanbirch/temple-api/issues"
-  },
-  "homepage": "https://github.com/nathanbirch/temple-api#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",

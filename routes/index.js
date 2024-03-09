@@ -1,12 +1,12 @@
-const routes = require('express').Router();
-const temple = require('./temple');
+const routes = require("express").Router();
+const templeRoutes = require("./temple.routes.js");
 
-routes.use('/temples', temple);
+routes.use("/temples", templeRoutes);
 routes.use(
-  '/',
+  "/",
   (docData = (req, res) => {
     let docData = {
-      documentationURL: 'https://nathanbirch.github.io/nathan-byui-api-docs',
+      documentationURL: "https://nathanbirch.github.io/nathan-byui-api-docs",
     };
     res.send(docData);
   })

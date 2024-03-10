@@ -16,3 +16,33 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
   "description": "This is a new temple.",
   "location": "New Location"
 }
+###
+DELETE http://localhost:8080/temples/65ebc391e2bd8f7a8a65dd14
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+###
+PUT http://localhost:8080/temples/61a921f6028954d4f0319e6d
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+  "_id": "61a921f6028954d4f0319e6d",
+  "temple_id": "1",
+  "name": "Aba Nigeria Temple",
+  "description": "This is a sample description",
+  "additionalInfo": true ,
+  "dedicated": "7 August 99999",
+  "location": "Aba, Abia, Nigeria"
+}
+###
+PUT http://localhost:8080/temples/61a921f6028954d4f0319e6d
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+  "_id": "61a921f6028954d4f0319e6d",
+  "temple_id": "1",
+  "name": "Aba Nigeria Temple",
+  "description": "This is a sample description",
+  "additionalInfo": true ,
+  "dedicated": "7 August 2005",
+  "location": "Aba, Abia, Nigeria"
+}

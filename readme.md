@@ -9,3 +9,5 @@ Render - https://cse341-contact-list.onrender.com
 Swagger API Docs - https://cse341-contact-list.onrender.com/api-docs/
 
 ### Video
+
+https://somup.com/cZe619p9jz

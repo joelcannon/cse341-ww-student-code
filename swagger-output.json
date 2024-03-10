@@ -5,8 +5,8 @@
     "description": "BYUI CSE341 Week 2: API Documentation for REST-client project",
     "version": "1.0.0"
   },
-  "host": "localhost",
-  "basePath": ":8080",
+  "host": "localhost:8080",
+  "basePath": "/",
   "schemes": [
     "http"
   ],

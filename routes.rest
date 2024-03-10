@@ -12,15 +12,19 @@ POST http://localhost:8080/contacts
 Content-Type: application/json
 
 {
-   "firstName": "John",
-   "lastName": "Doe",
-   "email": "john.doe@example.com",
-   "favoriteColor": "blue",
-   "birthday": "1990-01-01"
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1990-01-01"
 }
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
 
-@name createContact
-Expect: status 201
+{
+  "key": "value"
+}
 
 // PRODUCTION Deploy
 ###

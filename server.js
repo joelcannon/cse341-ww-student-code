@@ -1,9 +1,3 @@
-/**
- * Loads environment variables from a .env file into process.env.
- * @name dotenv
- * @type {Function}
- * @returns {void}
- */
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -18,11 +12,6 @@ const swaggerDocument = require('./swagger-output.json')
 const app = express()
 
 app
-  .use(express.raw({ type: 'application/json' }))
-  .use((req, res, next) => {
-    console.log(req.body.toString()) // Log the raw request body
-    next()
-  })
   .use(express.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', config.CORS_ORIGIN) // Use value from config

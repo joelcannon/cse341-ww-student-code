@@ -8,7 +8,7 @@ router.get('/', [
   // #swagger.description = 'get all contacts'
   // #swagger.tags = ['contacts']
 
-  contactsController.getAll,
+  contactsController.getAllContacts,
 ])
 
 router.get('/:id', [
@@ -26,7 +26,7 @@ router.get('/:id', [
     next()
   },
   // Get a single contact
-  contactsController.getSingle,
+  contactsController.getSingleContact,
 ])
 
 router.post('/', [
@@ -50,7 +50,55 @@ router.post('/', [
   },
 
   // Create a new contact
-  contactsController.create,
+  contactsController.createContact,
+])
+
+router.put('/:id', [
+  // #swagger.description = 'Update a contact'
+  // #swagger.tags = ['contacts']
+
+  // Validate the ID parameter
+  check('id').isMongoId().withMessage('Invalid ID format'),
+  // Validate the other optional fields in the request body
+  check('firstName')
+    .optional()
+    .notEmpty()
+    .withMessage('First name is required'),
+  check('lastName').optional().notEmpty().withMessage('Last name is required'),
+  check('email').optional().isEmail().withMessage('Invalid email format'),
+  check('favoriteColor')
+    .optional()
+    .notEmpty()
+    .withMessage('Favorite color is required'),
+  check('birthday').optional().notEmpty().withMessage('Birthday is required'),
+  // Handle validation errors
+  (req, res, next) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }
+    next()
+  },
+  // Update a contact
+  contactsController.updateContact,
+])
+
+router.delete('/:id', [
+  // #swagger.description = 'Delete a contact'
+  // #swagger.tags = ['contacts']
+
+  // Validate the ID parameter
+  check('id').isMongoId().withMessage('Invalid ID format'),
+  // Handle validation errors
+  (req, res, next) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }
+    next()
+  },
+  // Delete a contact
+  contactsController.deleteContact,
 ])
 
 // Error handling middleware

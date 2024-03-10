@@ -4,10 +4,6 @@ GET http://localhost:8080/contacts
 ###
 GET http://localhost:8080/contacts/65e41017215699338c6cbc4d
 ###
-GET http://localhost:8080/contacts/65e41017215699338c6cbc4e
-###
-GET http://localhost:8080/contacts/65e41017215699338c6cbc4f
-###
 POST http://localhost:8080/contacts
 Content-Type: application/json
 
@@ -23,8 +19,26 @@ POST http://localhost:8080/contacts
 Content-Type: application/json
 
 {
-  "key": "value"
+  "key": "invalid value"
 }
+
+###
+PUT http://localhost:8080/contacts/65ed1f5ec623de4cb0247091
+Content-Type: application/json
+
+{
+  "firstName": "Jack",
+  "lastName": "Dork",
+  "email": "john.doe@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1990-01-01"
+}
+
+###
+DELETE http://localhost:8080/contacts/65ed28ac2bd8ca531018d389
+###
+
+
 
 // PRODUCTION Deploy
 ###
@@ -32,6 +46,36 @@ GET https://cse341-contact-list.onrender.com/contacts
 ###
 GET https://cse341-contact-list.onrender.com/contacts/65e41017215699338c6cbc4d
 ###
-GET https://cse341-contact-list.onrender.com/contacts/65e41017215699338c6cbc4e
+POST https://cse341-contact-list.onrender.com/contacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1990-01-01"
+}
 ###
-GET https://cse341-contact-list.onrender.com/contacts/65e41017215699338c6cbc4f
+POST https://cse341-contact-list.onrender.com/contacts/
+Content-Type: application/json
+
+{
+  "key": "invalid value"
+}
+
+###
+PUT https://cse341-contact-list.onrender.com/contacts/65ed1f5ec623de4cb0247091
+Content-Type: application/json
+
+{
+  "firstName": "Jack",
+  "lastName": "Dork",
+  "email": "john.doe@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1990-01-01"
+}
+
+###
+DELETE https://cse341-contact-list.onrender.com/contacts/65ed28ac2bd8ca531018d389
+###

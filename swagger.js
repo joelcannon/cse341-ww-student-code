@@ -7,6 +7,7 @@ const doc = {
       'BYUI CSE341 Week 2: API Documentation for REST-client project',
   },
   host: process.env.HOST || 'localhost:8080',
+  schemes: [process.env.SWAGGER_SCHEME || 'http'],
 }
 
 const outputFile = './swagger-output.json'

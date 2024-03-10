@@ -13,3 +13,5 @@ services:
         value: https://cse341-contact-list.onrender.com
       - key: HOST
         value: https://cse341-contact-list.onrender.com
+      - key: SWAGGER_SCHEME
+        value: https

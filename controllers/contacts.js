@@ -8,7 +8,7 @@ const ObjectId = require('mongodb').ObjectId
  * @param {Function} next - The next middleware function.
  * @returns {Promise<void>} - A promise that resolves when the operation is complete.
  */
-const getAll = async (req, res, next) => {
+const getAllContacts = async (req, res, next) => {
   try {
     const result = await mongodb
       .getDb()
@@ -30,7 +30,7 @@ const getAll = async (req, res, next) => {
  * @param {Function} next - The next middleware function.
  * @returns {Promise<void>} - A promise that resolves when the operation is complete.
  */
-const getSingle = async (req, res, next) => {
+const getSingleContact = async (req, res, next) => {
   try {
     const userId = new ObjectId(req.params.id)
     const result = await mongodb
@@ -52,7 +52,7 @@ const getSingle = async (req, res, next) => {
  * @param {Function} next - The next middleware function.
  * @returns {Promise<void>} - A promise that resolves when the operation is complete.
  */
-const create = async (req, res, next) => {
+const createContact = async (req, res, next) => {
   try {
     const result = await mongodb
       .getDb()
@@ -66,4 +66,54 @@ const create = async (req, res, next) => {
   }
 }
 
-module.exports = { getAll, getSingle, create }
+/**
+ * Updates a contact in the database.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} next - The next middleware function.
+ * @returns {Promise<void>} - A promise that resolves when the operation is complete.
+ */
+const updateContact = async (req, res, next) => {
+  try {
+    const userId = new ObjectId(req.params.id)
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .updateOne({ _id: userId }, { $set: req.body })
+    res.setHeader('Content-Type', 'application/json')
+    res.status(200).json({ modifiedCount: result.modifiedCount })
+  } catch (err) {
+    next(err)
+  }
+}
+
+/**
+ * Deletes a contact from the database.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} next - The next middleware function.
+ * @returns {Promise<void>} - A promise that resolves when the operation is complete.
+ */
+const deleteContact = async (req, res, next) => {
+  try {
+    const userId = new ObjectId(req.params.id)
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .deleteOne({ _id: userId })
+    res.setHeader('Content-Type', 'application/json')
+    res.status(200).json({ deletedCount: result.deletedCount })
+  } catch (err) {
+    next(err)
+  }
+}
+
+module.exports = {
+  getAllContacts,
+  getSingleContact,
+  createContact,
+  updateContact,
+  deleteContact,
+}

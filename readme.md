@@ -6,8 +6,6 @@ Test the endpoints in the routes.rest file with Rest Client or another similar t
 
 GitHub - https://github.com/joelcannon/cse341-ww-student-code/tree/wk1.2-jc
 Render - https://cse341-contact-list.onrender.com
-Swagger API Docs - http://localhost:8080/api-docs/
+Swagger API Docs - https://cse341-contact-list.onrender.com/api-docs/
 
 ### Video
-
-[Video Example for Students without showing all code](https://www.youtube.com/watch?v=MhObHmqk58U)

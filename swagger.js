@@ -9,6 +9,7 @@ const doc = {
   host: process.env.HOST || 'localhost:8080',
   schemes: [process.env.SWAGGER_SCHEME || 'http'],
 }
+console.log('env: ', doc.host, doc.schemes)
 
 const outputFile = './swagger-output.json'
 const routes = ['./routes/index.js']

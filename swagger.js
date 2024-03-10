@@ -10,7 +10,13 @@ const doc = {
   basePath: process.env.PORT ? `:${process.env.PORT}` : ':8080',
   schemes: [process.env.SWAGGER_SCHEME || 'http'],
 }
-console.log('env: ', doc.host, doc.schemes, process.env.HOST)
+console.log(
+  'env: ',
+  process.env.SWAGGER_SCHEME,
+  process.env.HOST,
+  process.env.PORT,
+)
+console.log('local: ', doc.schemes, doc.host, doc.basePath)
 
 const outputFile = './swagger-output.json'
 const routes = ['./routes/index.js']

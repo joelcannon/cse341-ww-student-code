@@ -7,6 +7,20 @@ GET http://localhost:8080/contacts/65e41017215699338c6cbc4d
 GET http://localhost:8080/contacts/65e41017215699338c6cbc4e
 ###
 GET http://localhost:8080/contacts/65e41017215699338c6cbc4f
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+   "firstName": "John",
+   "lastName": "Doe",
+   "email": "john.doe@example.com",
+   "favoriteColor": "blue",
+   "birthday": "1990-01-01"
+}
+
+@name createContact
+Expect: status 201
 
 // PRODUCTION Deploy
 ###

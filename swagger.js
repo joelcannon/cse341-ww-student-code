@@ -6,7 +6,8 @@ const doc = {
     description:
       'BYUI CSE341 Week 2: API Documentation for REST-client project',
   },
-  host: process.env.HOST || 'localhost:8080',
+  host: process.env.HOST || 'localhost',
+  basePath: process.env.PORT ? `:${process.env.PORT}` : ':8080',
   schemes: [process.env.SWAGGER_SCHEME || 'http'],
 }
 console.log('env: ', doc.host, doc.schemes)

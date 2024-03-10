@@ -12,6 +12,6 @@ services:
       - key: CORS_ORIGIN
         value: https://cse341-contact-list.onrender.com
       - key: HOST
-        value: https://cse341-contact-list.onrender.com
+        value: cse341-contact-list.onrender.com
       - key: SWAGGER_SCHEME
         value: https

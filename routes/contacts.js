@@ -34,20 +34,20 @@ router.post('/', [
   // #swagger.tags = ['contacts']
 
   // Validate the request body
-  // check('firstName').notEmpty().withMessage('First name is required'),
-  // check('lastName').notEmpty().withMessage('Last name is required'),
-  // check('email').isEmail().withMessage('Email is required'),
-  // check('favoriteColor').notEmpty().withMessage('Favorite color is required'),
-  // check('birthday').notEmpty().withMessage('Birthday is required'),
+  check('firstName').notEmpty().withMessage('First name is required'),
+  check('lastName').notEmpty().withMessage('Last name is required'),
+  check('email').isEmail().withMessage('Email is required'),
+  check('favoriteColor').notEmpty().withMessage('Favorite color is required'),
+  check('birthday').notEmpty().withMessage('Birthday is required'),
 
   // // Handle validation errors
-  // (req, res, next) => {
-  //   const errors = validationResult(req)
-  //   if (!errors.isEmpty()) {
-  //     return res.status(400).json({ errors: errors.array() })
-  //   }
-  //   next()
-  // },
+  (req, res, next) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }
+    next()
+  },
 
   // Create a new contact
   contactsController.create,

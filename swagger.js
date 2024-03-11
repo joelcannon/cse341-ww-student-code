@@ -1,11 +1,24 @@
-const swaggerAutogen = require("swagger-autogen")();
+const swaggerAutogen = require("swagger-autogen")({ openapi: "3.0.0" });
 
 const doc = {
   info: {
     title: "temple-api",
     description: "BYUI CSE341 Week 2: API Documentation for temple-api server",
   },
-  host: process.env.HOST || "localhost:8080",
+  servers: [
+    // Used in place of 'schemes', 'basePath', etc.
+    // Look into documentation on their GitHub repo's.
+    {
+      // The first url set will be your default.
+      url: "http://localhost:8080",
+      description: "localhost:8080",
+    },
+    {
+      // This is another option that can be selected to connect through.
+      url: 'https://<your full Render project domain here, minus "/api-docs">',
+      description: "Render URL",
+    },
+  ],
 };
 
 const outputFile = "./swagger-output.json";

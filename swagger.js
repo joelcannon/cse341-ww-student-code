@@ -5,6 +5,7 @@ const doc = {
     title: 'REST-client API+',
     description:
       'BYUI CSE341 Week 2: API Documentation for REST-client project',
+    version: '1.0.2',
   },
   servers: [
     // Used in place of 'schemes', 'basePath', etc.

@@ -2,7 +2,7 @@ const swaggerAutogen = require('swagger-autogen')({ openapi: '3.0.0' })
 
 const doc = {
   info: {
-    title: 'REST-client API',
+    title: 'REST-client API+',
     description:
       'BYUI CSE341 Week 2: API Documentation for REST-client project',
   },

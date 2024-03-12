@@ -1,6 +1,6 @@
 {
   "name": "REST-client API",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "learn how to make a MongoDB REST API",
   "main": "server.js",
   "scripts": {
